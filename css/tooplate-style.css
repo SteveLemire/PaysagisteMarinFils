@@ -10,7 +10,6 @@ body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	background: url('../img/shelf-bg.jpg');
-	/* background: url('../../photo/image00060.jpeg'); */
 	padding: 0 15px;
 	overflow-x: hidden;
 	min-width: 350px;
