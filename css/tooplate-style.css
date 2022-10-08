@@ -117,8 +117,7 @@ button:focus {
 .tm-site-header-text {
 	background-color: rgba(0, 0, 0, 0.5);
 	border-radius: 50px 15px 50px 15px;
-	/* padding: 15px; */
-	padding: 4%;
+	padding: 6%;
 }
 
 .tm-site-name {
@@ -145,7 +144,7 @@ button:focus {
 	background: url('../photo/image00001.jpeg') no-repeat;
 	background-size: cover;
 	height: 300px;
-	padding: 30px 60px;
+	padding: 2% 5%;
 	position: relative;
 	border-bottom: 10px solid #076599;
 }
@@ -529,4 +528,54 @@ footer a:hover {
 		font-size: 1rem;
 		padding: 10px 15px;
 	}
+}
+
+
+#tooltip {
+	background: #333;
+	color: white;
+	font-weight: bold;
+	padding: 4px 8px;
+	font-size: 13px;
+	border-radius: 4px;
+	display: none;
+}
+
+#tooltip[data-show] {
+	display: block;
+	z-index: 100;
+}
+
+#arrow,
+#arrow::before {
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background: inherit;
+}
+
+#arrow {
+	visibility: hidden;
+}
+
+#arrow::before {
+	visibility: visible;
+	content: '';
+	transform: rotate(45deg);
+}
+
+#tooltip[data-popper-placement^='top']>#arrow {
+	bottom: -4px;
+}
+
+#tooltip[data-popper-placement^='bottom']>#arrow {
+	top: -4px;
+}
+
+#tooltip[data-popper-placement^='left']>#arrow {
+	right: -4px;
+}
+
+#tooltip[data-popper-placement^='right']>#arrow {
+	left: -4px;
 }
