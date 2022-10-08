@@ -120,8 +120,8 @@ http://www.tooplate.com/view/2092-shelf
 
                     <div class="tm-gallery">
                         <div class="row">
-                            <figure id="button"
-                                class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                            <figure
+                                class="col-md-4 col-sm-6 col-12 tm-gallery-item">
                                 <a href="#">
                                     <div class="tm-gallery-item-overlay">
                                         <img src="./photo/thumbnails/image00001.jpeg"
@@ -130,16 +130,11 @@ http://www.tooplate.com/view/2092-shelf
                                     </div>
                                     <p class="tm-figcaption">Aménagement paysagé
                                     </p>
-                                    <div id="tooltip" role="tooltip">
-                                        L'aménagement de vos rêve fait avec
-                                        rigueur selon les normes le plus élevé.
-                                        <div id="arrow" data-popper-arrow></div>
-                                    </div>
                                 </a>
                             </figure>
 
                             <figure
-                                class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                                class="col-md-4 col-sm-6 col-12 tm-gallery-item">
                                 <a href="#">
                                     <div class="tm-gallery-item-overlay">
                                         <img src="./photo/thumbnails/image00055.jpeg"
@@ -151,7 +146,7 @@ http://www.tooplate.com/view/2092-shelf
                             </figure>
 
                             <figure
-                                class="col-lg-4 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                                class="col-md-4 col-sm-6 col-12 tm-gallery-item">
                                 <a href="#">
                                     <div class="tm-gallery-item-overlay">
                                         <img src="./photo/thumbnails/image00015.jpeg"
@@ -164,7 +159,7 @@ http://www.tooplate.com/view/2092-shelf
                             </figure>
 
                             <figure
-                                class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                                class="col-md-4 col-sm-6 col-12 tm-gallery-item">
                                 <a href="#">
                                     <div class="tm-gallery-item-overlay">
                                         <img src="./photo/thumbnails/image00036.jpeg"
@@ -177,7 +172,7 @@ http://www.tooplate.com/view/2092-shelf
                             </figure>
 
                             <figure
-                                class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                                class="col-md-4 col-sm-6 col-12 tm-gallery-item">
                                 <a href="#">
                                     <div class="tm-gallery-item-overlay">
                                         <img src="./photo/thumbnails/image00039.jpeg"
@@ -190,7 +185,7 @@ http://www.tooplate.com/view/2092-shelf
                             </figure>
 
                             <figure
-                                class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                                class="col-md-4 col-sm-6 col-12 tm-gallery-item">
                                 <a href="#">
                                     <div class="tm-gallery-item-overlay">
                                         <img src="./photo/thumbnails/image00063.jpeg"
@@ -248,74 +243,12 @@ http://www.tooplate.com/view/2092-shelf
         <!-- load JS files -->
         <script src="js/jquery-1.11.3.min.js"></script>
         <!-- jQuery (https://jquery.com/download/) -->
-        <!-- <script src="js/popper.min.js"></script> -->
-        <!-- Popper (https://popper.js.org/) -->
         <script src="js/bootstrap.min.js"></script>
         <!-- Bootstrap (https://getbootstrap.com/) -->
         <script>
             $(document).ready(function () {
                 // Update the current year in copyright
                 $('.tm-current-year').text(new Date().getFullYear());
-            });
-        </script>
-
-        <script src="https://unpkg.com/@popperjs/core@2"></script>
-        <script>
-            const button = document.querySelector('#button');
-            const tooltip = document.querySelector('#tooltip');
-
-            const popperInstance = Popper.createPopper(button, tooltip, {
-                placement: 'right',
-                modifiers: [
-                    {
-                        name: 'offset',
-                        options: {
-                            offset: [0, 8],
-                        },
-                    },
-                ],
-            });
-
-            function show() {
-                // Make the tooltip visible
-                tooltip.setAttribute('data-show', '');
-
-                // Enable the event listeners
-                popperInstance.setOptions((options) => ({
-                    ...options,
-                    modifiers: [
-                        ...options.modifiers,
-                        { name: 'eventListeners', enabled: true },
-                    ],
-                }));
-
-                // Update its position
-                popperInstance.update();
-            }
-
-            function hide() {
-                // Hide the tooltip
-                tooltip.removeAttribute('data-show');
-
-                // Disable the event listeners
-                popperInstance.setOptions((options) => ({
-                    ...options,
-                    modifiers: [
-                        ...options.modifiers,
-                        { name: 'eventListeners', enabled: false },
-                    ],
-                }));
-            }
-
-            const showEvents = ['mouseenter', 'focus'];
-            const hideEvents = ['mouseleave', 'blur'];
-
-            showEvents.forEach((event) => {
-                button.addEventListener(event, show);
-            });
-
-            hideEvents.forEach((event) => {
-                button.addEventListener(event, hide);
             });
         </script>
     </body>
