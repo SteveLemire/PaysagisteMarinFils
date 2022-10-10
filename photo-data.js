@@ -13,7 +13,7 @@ var photoData =
     {
         "title": "Patio de piscine (pavé collé)",
         "fileName": "PatioPiscinePaveColler",
-        "fileCount": 2
+        "fileCount": 3
     },
     {
         "title": "Pavé unis",
