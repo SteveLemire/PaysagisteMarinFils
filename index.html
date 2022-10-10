@@ -64,8 +64,7 @@ http://www.tooplate.com/view/2092-shelf
                     </div>
 
                     <header>
-                        <h3 class="tm-section-header tm-margin-b-p">Régions
-                            déservis</h3>
+                        <h3 class="tm-section-header tm-margin-b-p">Régions déservis</h3>
                     </header>
                     <ul>
                         <li><i>De la Rive-Sud de Montréal aux Cantons-de-l'Est</i></li>
@@ -75,22 +74,14 @@ http://www.tooplate.com/view/2092-shelf
                     </ul>
 
                     <header>
-                        <h3 class="tm-section-header tm-margin-b-p">Notre Expertise</h3>
+                        <h3 class="tm-section-header tm-margin-b-p">Notre expertise</h3>
                     </header>
-                    <ul>
-                        <li>Aménagement paysagé</li>
-                        <li>Pavé unis (installation et réparation)</li>
-                        <li>Pierre à coller (intérieur et extérieur)</li>
-                        <li>Patio de piscine</li>
-                        <li>Muret (pavé, brique, pierre naturel, etc.)</li>
-                        <li>Réparation de cheminé et de pierre en tout genre</li>
-                        </li>
-                    </ul>
+                    <div id="dynamic-photo-list"></div>
                 </section>
 
                 <div id="dynamic-gallery">
                     <header>
-                        <h3 class="tm-section-header tm-margin-b-p">Réalisations</h3>
+                        <h3 class="tm-section-header tm-margin-b-p">Nos réalisations</h3>
                     </header>
 
                     <!-- Generate photo gallery dynamically -->
@@ -131,22 +122,30 @@ http://www.tooplate.com/view/2092-shelf
         <!-- Bootstrap (https://getbootstrap.com/) -->
         <script src="js/bootstrap.min.js"></script>
 
-        <script>
-            $(document).ready(function () {
-                // Update the current year in copyright
-                $('.tm-current-year').text(new Date().getFullYear());
-            });
-        </script>
+        <!-- Use to load the list of realizations photos -->
+        <script src="photo-data.js"></script>
 
         <script>
+            function createPhotoList() {
+                let photoListItemHtml = ``;
+                photoData.forEach(photoItem => {
+                    if (!photoItem.title) {
+                        alert('The photo data missing required title');
+                        return;
+                    }
+                    photoListItemHtml += `<li><a href="#` + photoItem.fileName + `">` + photoItem.title + `</a></li>`;
+                });
+
+                let dynamicDiv = document.getElementById('dynamic-photo-list');
+                dynamicDiv.innerHTML += `<ul>` + photoListItemHtml + `</ul>`;
+            }
+
             // Generate photo gallery dynamically
-            function addHeaderToSection(title, fileName, fileCount) {
-                console.debug(`Added dynamic element: ` + title);
+            function createPhotoGallery(title, fileName, fileCount) {
                 let dynamicDiv = document.getElementById('dynamic-gallery');
-
                 let headerHtml = `
                     <header>
-                        <h6 class="tm-section-header tm-margin-b-p">` + title + `</h6>
+                        <h6 id="` + fileName + `" class="tm-section-header tm-margin-b-p">` + title + `<div class="tm-section-header-arrow"><a href="#">&#11165;</a></div></h6>
                     </header>`;
 
                 let photoHtml = ``;
@@ -171,14 +170,21 @@ http://www.tooplate.com/view/2092-shelf
                 dynamicDiv.innerHTML += dynamicGalleryContainer;
             };
 
-            addHeaderToSection('Aménagement Paysager', 'AmenagementPaysager', 4);
-            addHeaderToSection('Muret', 'Muret', 2);
-            addHeaderToSection('Patio de piscine (pavé collé)', 'PatioPiscinePaveColler', 2);
-            addHeaderToSection('Pavé unis', 'PaveUnis', 6);
-            addHeaderToSection('Pierre collé', 'PierreColler', 1);
-            addHeaderToSection('Réparation de cheminé', 'ReparationChemine', 4);
-            addHeaderToSection('Réparation de pavé', 'ReparationPave', 5);
-            addHeaderToSection('Réparation de pierre naturelles', 'ReparationPierreNaturel', 2);
+            // Create the list of link for the expertise that will link to realization photos
+            createPhotoList();
+            // Create the photo gallery
+            photoData.forEach(photoItem => {
+                console.log(photoItem.fileName);
+                if (!photoItem.fileCount) return;
+                createPhotoGallery(photoItem.title, photoItem.fileName, photoItem.fileCount);
+            });
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                // Update the current year in copyright
+                $('.tm-current-year').text(new Date().getFullYear());
+            });
         </script>
     </body>
 

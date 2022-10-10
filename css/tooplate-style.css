@@ -21,9 +21,10 @@ button {
 	transition: all 0.3s ease;
 }
 
+
 a:hover,
 a:focus {
-	text-decoration: none;
+	text-decoration: underline;
 	outline: none;
 }
 
@@ -156,6 +157,13 @@ button:focus {
 	background-color: #ededed;
 	border-radius: 5px;
 	padding: 5px 10px;
+}
+
+.tm-section-header-arrow {
+	vertical-align: top;
+	float: right;
+	font-weight: bolder;
+	padding: 3px;
 }
 
 .tm-gallery {
