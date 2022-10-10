@@ -86,72 +86,15 @@ http://www.tooplate.com/view/2092-shelf
                         <li>Réparation de cheminé et de pierre en tout genre</li>
                         </li>
                     </ul>
-
-                    <div class="tm-gallery">
-                        <div class="row">
-                            <figure class="col-md-4 col-sm-6 col-12 tm-gallery-item">
-                                <a href="#">
-                                    <div class="tm-gallery-item-overlay">
-                                        <img src="./photo/thumbnails/image00001.jpeg" alt="Image"
-                                             class="img-fluid tm-img-center">
-                                    </div>
-                                    <p class="tm-figcaption">Aménagement paysagé</p>
-                                </a>
-                            </figure>
-
-                            <figure class="col-md-4 col-sm-6 col-12 tm-gallery-item">
-                                <a href="#">
-                                    <div class="tm-gallery-item-overlay">
-                                        <img src="./photo/thumbnails/image00055.jpeg" alt="Image"
-                                             class="img-fluid tm-img-center">
-                                    </div>
-                                    <p class="tm-figcaption">Plantation</p>
-                                </a>
-                            </figure>
-
-                            <figure class="col-md-4 col-sm-6 col-12 tm-gallery-item">
-                                <a href="#">
-                                    <div class="tm-gallery-item-overlay">
-                                        <img src="./photo/thumbnails/image00015.jpeg" alt="Image"
-                                             class="img-fluid tm-img-center">
-                                    </div>
-                                    <p class="tm-figcaption">Muret en pierre naturel</p>
-                                </a>
-                            </figure>
-
-                            <figure class="col-md-4 col-sm-6 col-12 tm-gallery-item">
-                                <a href="#">
-                                    <div class="tm-gallery-item-overlay">
-                                        <img src="./photo/thumbnails/image00036.jpeg" alt="Image"
-                                             class="img-fluid tm-img-center">
-                                    </div>
-
-                                    <p class="tm-figcaption">Pavé unis</p>
-                                </a>
-                            </figure>
-
-                            <figure class="col-md-4 col-sm-6 col-12 tm-gallery-item">
-                                <a href="#">
-                                    <div class="tm-gallery-item-overlay">
-                                        <img src="./photo/thumbnails/image00039.jpeg" alt="Image"
-                                             class="img-fluid tm-img-center">
-                                    </div>
-                                    <p class="tm-figcaption">Patio de piscine</p>
-                                </a>
-                            </figure>
-
-                            <figure class="col-md-4 col-sm-6 col-12 tm-gallery-item">
-                                <a href="#">
-                                    <div class="tm-gallery-item-overlay">
-                                        <img src="./photo/thumbnails/image00063.jpeg" alt="Image"
-                                             class="img-fluid tm-img-center">
-                                    </div>
-                                    <p class="tm-figcaption">Réparation de cheminé</p>
-                                </a>
-                            </figure>
-                        </div>
-                    </div>
                 </section>
+
+                <div id="dynamic-gallery">
+                    <header>
+                        <h3 class="tm-section-header tm-margin-b-p">Réalisations</h3>
+                    </header>
+
+                    <!-- Generate photo gallery dynamically -->
+                </div>
 
                 <section class="media tm-highlight tm-highlight-w-icon">
 
@@ -181,15 +124,61 @@ http://www.tooplate.com/view/2092-shelf
         </div>
 
         <!-- load JS files -->
-        <script src="js/jquery-1.11.3.min.js"></script>
         <!-- jQuery (https://jquery.com/download/) -->
-        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <!-- Popper (https://popper.js.org/) -->
+        <script src="js/popper.min.js"></script>
         <!-- Bootstrap (https://getbootstrap.com/) -->
+        <script src="js/bootstrap.min.js"></script>
+
         <script>
             $(document).ready(function () {
                 // Update the current year in copyright
                 $('.tm-current-year').text(new Date().getFullYear());
             });
+        </script>
+
+        <script>
+            // Generate photo gallery dynamically
+            function addHeaderToSection(title, fileName, fileCount) {
+                console.debug(`Added dynamic element: ` + title);
+                let dynamicDiv = document.getElementById('dynamic-gallery');
+
+                let headerHtml = `
+                    <header>
+                        <h6 class="tm-section-header tm-margin-b-p">` + title + `</h6>
+                    </header>`;
+
+                let photoHtml = ``;
+                for (let index = 1; index <= fileCount; index++) {
+                    let fileNumber = String(index).padStart(2, '0');
+                    let fileFullName = fileName + fileNumber + '.jpeg';
+                    photoHtml += `
+                    <figure class="col-md-4 col-sm-6 col-12 tm-gallery-item">
+                        <a href="#">
+                            <div class="tm-gallery-item-overlay">
+                                <img src="./photo/web-photo-thumbnails/` + fileFullName + `" alt="` + fileFullName + `"
+                                        class="img-fluid tm-img-center">
+                            </div>
+                        </a>
+                    </figure>`;
+                }
+
+                let dynamicGalleryContainer = `
+                <section class="tm-margin-b-l">` + headerHtml + `
+                    <div class="tm-gallery row">` + photoHtml + `</div>
+                </section>`;
+                dynamicDiv.innerHTML += dynamicGalleryContainer;
+            };
+
+            addHeaderToSection('Aménagement Paysager', 'AmenagementPaysager', 4);
+            addHeaderToSection('Muret', 'Muret', 2);
+            addHeaderToSection('Patio de piscine (pavé collé)', 'PatioPiscinePaveColler', 2);
+            addHeaderToSection('Pavé unis', 'PaveUnis', 6);
+            addHeaderToSection('Pierre collé', 'PierreColler', 1);
+            addHeaderToSection('Réparation de cheminé', 'ReparationChemine', 4);
+            addHeaderToSection('Réparation de pavé', 'ReparationPave', 5);
+            addHeaderToSection('Réparation de pierre naturelles', 'ReparationPierreNaturel', 2);
         </script>
     </body>
 

@@ -133,7 +133,7 @@ button:focus {
 .tm-site-header {
 	border-bottom: 10px solid #076599;
 	background-color: darkolivegreen;
-	background-image: url('../photo/image00001.jpeg');
+	background-image: url('../photo/web-photo/AmenagementPaysager01.jpeg');
 	background-clip: padding-box;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -159,8 +159,8 @@ button:focus {
 }
 
 .tm-gallery {
-	padding-top: 60px;
-	padding-bottom: 35px;
+	padding-top: 15px;
+	padding-bottom: 25px;
 	margin: 0 auto;
 }
 
@@ -205,6 +205,8 @@ button:focus {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	width: 100%;
+	height: 100%;
 }
 
 .tm-img-center-sm {
@@ -226,7 +228,7 @@ button:focus {
 }
 
 .tm-margin-b-l {
-	margin-bottom: 60px;
+	margin-bottom: 15px;
 }
 
 .tm-margin-b-ll {
