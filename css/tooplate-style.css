@@ -8,11 +8,12 @@ http://www.tooplate.com/view/2092-shelf
 
 body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	font-size: 18px;
+	/* font-size: 18px; */
 	background: url('../img/shelf-bg.jpg');
 	padding: 0 15px;
 	overflow-x: hidden;
-	min-width: 350px;
+	/* min-width: 350px; */
+	min-width: 400px;
 }
 
 a,
@@ -58,6 +59,13 @@ button:focus {
 	outline: none;
 }
 
+.container {
+	background-color: white;
+	max-width: 1120px;
+	padding: 0;
+	margin: 0 auto;
+}
+
 .tm-btn {
 	display: inline-block;
 	font-size: 1.2rem;
@@ -88,30 +96,8 @@ button:focus {
 	background-color: #c6c6c6;
 }
 
-.tm-blue-text {
-	color: #186e9d;
-}
-
 .tm-green-text {
 	color: #C5F9D0;
-}
-
-.navbar-toggler {
-	background: rgba(0, 0, 0, 0.5);
-	border: none;
-	border-radius: 0;
-	color: white;
-	display: block;
-	padding: 0.6rem 1rem;
-	margin-left: auto;
-	margin-right: 0;
-}
-
-.container {
-	background-color: white;
-	max-width: 1120px;
-	padding: 0;
-	margin: 0 auto;
 }
 
 .tm-site-header-text {
@@ -127,55 +113,33 @@ button:focus {
 }
 
 .tm-site-description {
-	/* font-size: 1.4rem; */
-	/* font-size: 23px; */
-	/* font-size: calc(100% + 1.7vw); */
 	font-size: 1.4rem;
 }
 
+.tm-site-header-subtitle {
+	background-color: #076599;
+	border-radius: 5px;
+	padding: 5px 10px;
+	width: fit-content;
+}
+
 .tm-site-name,
+.tm-site-header-subtitle,
 .tm-site-description {
 	color: white;
 	text-shadow: 0px 3px 2px rgba(62, 62, 62, 1);
 }
 
-
 .tm-site-header {
-	background: url('../photo/image00001.jpeg') no-repeat;
-	background-size: cover;
-	height: 300px;
-	padding: 2% 5%;
-	position: relative;
 	border-bottom: 10px solid #076599;
-}
-
-.tm-main-nav-ul {
-	flex-flow: column;
-}
-
-.tm-main-nav-container {
-	position: fixed;
-	width: 100%;
-	top: 5px;
-	right: 10px;
-	width: 200px;
-	z-index: 1000;
-}
-
-.tm-main-nav {
-	background-color: rgba(0, 0, 0, 0.5);
-}
-
-.tm-main-nav .nav-link {
-	color: white;
-	font-size: 1.3rem;
-	padding: 15px 20px;
-}
-
-.tm-main-nav .nav-link.active,
-.tm-main-nav .nav-link:hover,
-.tm-main-nav .nav-link:focus {
-	color: #9AC9F7;
+	background-color: darkolivegreen;
+	background-image: url('../photo/image00001.jpeg');
+	background-clip: padding-box;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 400px;
+	padding: 2% 5%;
 }
 
 .tm-main-content {
@@ -185,6 +149,13 @@ button:focus {
 .tm-main-title {
 	color: #6C6C6C;
 	margin-bottom: 1.2rem;
+}
+
+.tm-section-header {
+	color: #186e9d;
+	background-color: #ededed;
+	border-radius: 5px;
+	padding: 5px 10px;
 }
 
 .tm-gallery {
@@ -199,8 +170,6 @@ button:focus {
 }
 
 .tm-gallery-item-preview {
-	/* max-width: 90%;
-	max-height: 90%; */
 	max-width: max-content;
 	max-height: max-content;
 }
@@ -250,36 +219,6 @@ button:focus {
 	text-align: center;
 }
 
-.tm-gallery-nav {
-	text-align: center;
-}
-
-.tm-gallery-nav .nav-item {
-	margin-right: 10px;
-	margin-bottom: 10px;
-}
-
-.tm-gallery-nav .nav-item:last-child {
-	margin-right: 0;
-}
-
-.tm-gallery-nav .nav-link {
-	background-color: #EDEDED;
-	color: #717171;
-	padding: .7rem 1.2rem;
-}
-
-.tm-gallery-nav .nav-item:last-child {
-	margin-right: 0;
-}
-
-.tm-gallery-nav .nav-link.active,
-.tm-gallery-nav .nav-link:focus,
-.tm-gallery-nav .nav-link:hover {
-	background: #076599;
-	color: white;
-}
-
 .media-body {
 	-ms-flex: 1;
 	flex: 1 1 auto;
@@ -308,7 +247,7 @@ button:focus {
 
 .tm-margin-b-p,
 p.tm-margin-b-p {
-	margin-top: 5px;
+	margin-top: 10px;
 	margin-bottom: 15px;
 }
 
@@ -459,25 +398,6 @@ footer a:hover {
 }
 
 @media (min-width: 768px) {
-	.tm-main-nav-ul {
-		flex-flow: row;
-		width: 100%;
-	}
-
-	.tm-main-nav-container {
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		right: auto;
-		top: auto;
-		padding: 0;
-		width: 100%;
-	}
-
-	.tm-main-nav .nav-link {
-		padding: 10px 15px;
-	}
-
 	.tm-gallery {
 		max-width: 760px;
 	}
@@ -500,10 +420,6 @@ footer a:hover {
 		height: 400px;
 	}
 
-	.tm-main-nav .nav-link {
-		padding: 15px 20px;
-	}
-
 	.tm-gallery {
 		max-width: none;
 	}
@@ -517,65 +433,4 @@ footer a:hover {
 	.tm-site-header {
 		height: 500px;
 	}
-
-	.tm-main-nav .nav-link {
-		padding: 25px;
-	}
-}
-
-@media (max-height: 360px) {
-	.tm-main-nav .nav-link {
-		font-size: 1rem;
-		padding: 10px 15px;
-	}
-}
-
-
-#tooltip {
-	background: #333;
-	color: white;
-	font-weight: bold;
-	padding: 4px 8px;
-	font-size: 13px;
-	border-radius: 4px;
-	display: none;
-}
-
-#tooltip[data-show] {
-	display: block;
-	z-index: 100;
-}
-
-#arrow,
-#arrow::before {
-	position: absolute;
-	width: 8px;
-	height: 8px;
-	background: inherit;
-}
-
-#arrow {
-	visibility: hidden;
-}
-
-#arrow::before {
-	visibility: visible;
-	content: '';
-	transform: rotate(45deg);
-}
-
-#tooltip[data-popper-placement^='top']>#arrow {
-	bottom: -4px;
-}
-
-#tooltip[data-popper-placement^='bottom']>#arrow {
-	top: -4px;
-}
-
-#tooltip[data-popper-placement^='left']>#arrow {
-	right: -4px;
-}
-
-#tooltip[data-popper-placement^='right']>#arrow {
-	left: -4px;
 }
