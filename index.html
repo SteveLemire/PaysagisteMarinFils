@@ -9,27 +9,14 @@
         <meta name="description"
               content="Pour vos projets d'aménagement extérieurs et réparation de pierre, notre équipe dynamique oeuvre dans le domaine de père en fils depuis plus de 30 ans.">
         <meta name="keywords"
-              content="marcel marin, marin fils,marin et fils,aménagement paysager,aménagement extérieur,paysagiste,paysagement extérireur,pavé,plantation,muret,réparation cheminé,patio piscine,rive-sud,cantons-de-l'est,montérégis,centre du québec,estrie">
-        <!--
+              content="marcel marin, marin fils,marin et fils,aménagement paysager,aménagement extérieur,paysagiste,paysagement extérireur,pavé, pavé unis,muret,pierre,réparation cheminé,patio piscine,rive-sud,cantons-de-l'est,montérégis,centre du québec,estrie">
 
-Template 2092 Shelf
-
-http://www.tooplate.com/view/2092-shelf
-
--->
-        <title>Marin & Fils</title>
+        <title>Marin & Fils - Aménagement paysager</title>
         <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
         <!-- Bootstrap style -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- Custom style -->
         <link rel="stylesheet" href="css/tooplate-style.css">
-
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-          <![endif]-->
     </head>
 
     <body>
@@ -85,6 +72,7 @@ http://www.tooplate.com/view/2092-shelf
                         <h3 class="tm-section-header tm-margin-b-p">Notre expertise</h3>
                     </header>
                     <div id="dynamic-photo-list"></div>
+                    <!-- Generate dynamically the photo gallery categories from photo-data  -->
                 </section>
 
                 <div id="dynamic-gallery">
@@ -92,7 +80,7 @@ http://www.tooplate.com/view/2092-shelf
                         <h3 class="tm-section-header tm-margin-b-p">Nos réalisations</h3>
                     </header>
 
-                    <!-- Generate photo gallery dynamically -->
+                    <!-- Generate dynamically the photo gallery from photo-data  -->
                 </div>
 
                 <section class="media tm-highlight tm-highlight-w-icon">
@@ -114,7 +102,7 @@ http://www.tooplate.com/view/2092-shelf
                 </section>
             </div>
             <footer>
-                Copyright &copy; <span class="tm-current-year">2018</span> Marin
+                Copyright &copy; <span id="current-year" class="tm-current-year">2018</span> Marin
                 & Fils - Designed by <a href="https://www.facebook.com/tooplate" target="_parent">Tooplate</a>
                 <div><a href="https://www.flaticon.com/fr/icones-gratuites/plante" title="plante icônes">Icônes créées
                         par Pixel perfect -
@@ -124,9 +112,9 @@ http://www.tooplate.com/view/2092-shelf
 
         <!-- load JS files -->
         <!-- jQuery (https://jquery.com/download/) -->
-        <!-- <script src="js/jquery-1.11.3.min.js"></script> -->
+        <script src="js/jquery-1.11.3.min.js"></script>
         <!-- Popper (https://popper.js.org/) -->
-        <!-- <script src="js/popper.min.js"></script> -->
+        <script src="js/popper.min.js"></script>
         <!-- Bootstrap (https://getbootstrap.com/) -->
         <script src="js/bootstrap.min.js"></script>
 
@@ -138,7 +126,7 @@ http://www.tooplate.com/view/2092-shelf
                 let photoListItemHtml = ``;
                 photoData.forEach(photoItem => {
                     if (!photoItem.title) {
-                        alert('The photo data missing required title');
+                        console.error('The photo data missing required title');
                         return;
                     }
                     photoListItemHtml += `<li><a href="#` + photoItem.fileName + `">` + photoItem.title + `</a></li>`;
@@ -151,6 +139,10 @@ http://www.tooplate.com/view/2092-shelf
             // Generate photo gallery dynamically
             function createPhotoGallery(title, fileName, fileCount) {
                 let dynamicDiv = document.getElementById('dynamic-gallery');
+                if (!dynamicDiv) {
+                    console.error('The dynamic div for photo gallery cannot be found.');
+                    return;
+                }
                 let headerHtml = `
                     <header>
                         <h5 id="` + fileName + `" class="tm-section-header tm-margin-b-p">`
@@ -189,13 +181,9 @@ http://www.tooplate.com/view/2092-shelf
                 if (!photoItem.fileCount) return;
                 createPhotoGallery(photoItem.title, photoItem.fileName, photoItem.fileCount);
             });
-        </script>
 
-        <script>
-            $(document).ready(function () {
-                // Update the current year in copyright
-                $('.tm-current-year').text(new Date().getFullYear());
-            });
+            // set the copyright current year
+            document.getElementById('current-year').innerText = new Date().getFullYear();
         </script>
     </body>
 
