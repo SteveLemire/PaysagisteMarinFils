@@ -7,9 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Steve Lemire">
         <meta name="description"
-              content="Pour vos projets d'aménagement extérieurs, notre équipe dynamique oeuvre de père en fils depuis plus de 30 ans de la planification à la réalisation">
+              content="Pour vos projets d'aménagement extérieurs et réparation de pierre, notre équipe dynamique oeuvre dans le domaine de père en fils depuis plus de 30 ans.">
         <meta name="keywords"
-              content="marcel marin, paysagiste, paysagement extérireur, aménagement paysager, aménagement extérieur, pavé, plantation, muret, réparation de cheminé,patio de piscine, rive-sud, cantons-de-l'est, montérégis, centre du québec, estrie">
+              content="marcel marin, marin fils,marin et fils,aménagement paysager,aménagement extérieur,paysagiste,paysagement extérireur,pavé,plantation,muret,réparation cheminé,patio piscine,rive-sud,cantons-de-l'est,montérégis,centre du québec,estrie">
         <!--
 
 Template 2092 Shelf
@@ -19,12 +19,6 @@ http://www.tooplate.com/view/2092-shelf
 -->
         <title>Marin & Fils</title>
         <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-
-        <!-- load stylesheets -->
-        <!-- Google web font "Open Sans" -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
         <!-- Bootstrap style -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- Custom style -->
@@ -58,20 +52,23 @@ http://www.tooplate.com/view/2092-shelf
                     <header>
                         <h3 class="tm-section-header tm-margin-b-p">Contact - Marcel Marin</h3>
                     </header>
-                    <div class="tm-gallery-item">
+                    <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                              preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                             <path fill="currentColor"
                                   d="M12 1.95c-5.52 0-10 4.48-10 10s4.48 10 10 10h5v-2h-5c-4.34 0-8-3.66-8-8s3.66-8 8-8s8 3.66 8 8v1.43c0 .79-.71 1.57-1.5 1.57s-1.5-.78-1.5-1.57v-1.43c0-2.76-2.24-5-5-5s-5 2.24-5 5s2.24 5 5 5c1.38 0 2.64-.56 3.54-1.47c.65.89 1.77 1.47 2.96 1.47c1.97 0 3.5-1.6 3.5-3.57v-1.43c0-5.52-4.48-10-10-10zm0 13c-1.66 0-3-1.34-3-3s1.34-3 3-3s3 1.34 3 3s-1.34 3-3 3z" />
-                        </svg><a href="mailto: marcel.marin9@icloud.com"> marcel.marin9@icloud.com</a><br>
-
+                        </svg>
+                        <a class="tm-gallery-item" href="mailto: marcel.marin9@icloud.com">marcel.marin9@icloud.com</a>
+                    </div>
+                    <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                              preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                             <path fill="currentColor"
                                   d="M13 8a3 3 0 0 1 3 3a1 1 0 0 0 2 0a5 5 0 0 0-5-5a1 1 0 0 0 0 2Z" />
                             <path fill="currentColor"
                                   d="M13 4a7 7 0 0 1 7 7a1 1 0 0 0 2 0a9 9 0 0 0-9-9a1 1 0 0 0 0 2Zm8.75 11.91a1 1 0 0 0-.72-.65l-6-1.37a1 1 0 0 0-.92.26c-.14.13-.15.14-.8 1.38a9.91 9.91 0 0 1-4.87-4.89C9.71 10 9.72 10 9.85 9.85a1 1 0 0 0 .26-.92L8.74 3a1 1 0 0 0-.65-.72a3.79 3.79 0 0 0-.72-.18A3.94 3.94 0 0 0 6.6 2A4.6 4.6 0 0 0 2 6.6A15.42 15.42 0 0 0 17.4 22a4.6 4.6 0 0 0 4.6-4.6a4.77 4.77 0 0 0-.06-.76a4.34 4.34 0 0 0-.19-.73Z" />
-                        </svg><a href="tel: 4383954590"> 438-395-4590</a><br>
+                        </svg>
+                        <a class="tm-gallery-item" href="tel: 4383954590">438-395-4590</a>
                     </div>
 
                     <header>
@@ -101,7 +98,7 @@ http://www.tooplate.com/view/2092-shelf
                 <section class="media tm-highlight tm-highlight-w-icon">
 
                     <div class="tm-highlight-icon">
-                        <i class="fa tm-fa-6x fa-meetup"></i>
+                        <img src="./img/fa-meetup.jpg" class="tm-fa-6x">
                     </div>
 
                     <div class="media-body">
@@ -189,7 +186,6 @@ http://www.tooplate.com/view/2092-shelf
             createPhotoList();
             // Create the photo gallery
             photoData.forEach(photoItem => {
-                console.log(photoItem.fileName);
                 if (!photoItem.fileCount) return;
                 createPhotoGallery(photoItem.title, photoItem.fileName, photoItem.fileCount);
             });
