@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- Custom style -->
         <link rel="stylesheet" href="css/tooplate-style.css">
+        <link rel="stylesheet" href="css/photoPoppup.css">
     </head>
 
     <body>
@@ -33,6 +34,14 @@
                     </p>
                 </div>
             </header>
+
+            <!-- Fullscreen photo gallery popup-->
+            <div id="photoPopup" class="modal" onclick="closePhotoPopup()">
+                <span class="close">&times;</span>
+                <!-- <div id="caption"></div> -->
+                <img class="modal-content" id="photoPopupImage">
+            </div>
+
 
             <div class="tm-main-content">
                 <section class="tm-margin-b-l">
@@ -79,7 +88,6 @@
                     <header>
                         <h3 class="tm-section-header tm-margin-b-p">Nos réalisations</h3>
                     </header>
-
                     <!-- Generate dynamically the photo gallery from photo-data  -->
                 </div>
 
@@ -122,6 +130,26 @@
         <script src="photo-data.js"></script>
 
         <script>
+            function openPhoto(fileName) {
+                // Get the modal
+                var modal = document.getElementById("photoPopup");
+                // Get the popup image element set his source image from fileName
+                var modalImg = document.getElementById("photoPopupImage");
+                modalImg.src = `./photo/web-photo/` + fileName;
+                modal.style.display = "block";
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+            }
+
+            function closePhotoPopup() {
+                var modal = document.getElementById("photoPopup");
+                modal.style.display = "none";
+            }
+
             function createPhotoList() {
                 let photoListItemHtml = ``;
                 photoData.forEach(photoItem => {
@@ -158,12 +186,11 @@
                     let fileFullName = fileName + fileNumber + '.jpeg';
                     photoHtml += `
                     <figure class="col-md-4 col-sm-6 col-12 tm-gallery-item">
-                        <a href="./photo/web-photo/` + fileFullName + `">
                             <div class="tm-gallery-item-overlay">
                                 <img src="./photo/web-photo-thumbnails/` + fileFullName + `" alt="` + fileFullName + `"
-                                        class="img-fluid tm-img-center">
+                                        class="img-fluid tm-img-center"
+                                        onclick="openPhoto('` + fileFullName + `')">
                             </div>
-                        </a>
                     </figure>`;
                 }
 
@@ -185,6 +212,7 @@
             // set the copyright current year
             document.getElementById('current-year').innerText = new Date().getFullYear();
         </script>
+
     </body>
 
 </html>
