@@ -23,6 +23,6 @@ Installation et réparation
 - Muret
 - Aménagement paysagé
 - Plantation
-- Pavé et muret en pierre naturel
+- Pavé et muret en pierre naturelle
 - Réparation de cheminé - allège et joint de brique
 - Patio de piscine

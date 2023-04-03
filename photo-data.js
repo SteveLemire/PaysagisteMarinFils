@@ -13,7 +13,7 @@ var photoData =
     {
         "title": "Patio de piscine (pavé collé)",
         "fileName": "PatioPiscinePaveColler",
-        "fileCount": 3
+        "fileCount": 6
     },
     {
         "title": "Pavé unis",
@@ -36,8 +36,8 @@ var photoData =
         "fileCount": 5
     },
     {
-        "title": "Réparation de pierre naturelles",
-        "fileName": "ReparationPierreNaturel",
+        "title": "Réparation de pierre naturelle",
+        "fileName": "ReparationPierreNaturelle",
         "fileCount": 2
     }
 ]
