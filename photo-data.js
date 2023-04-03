@@ -16,17 +16,17 @@ var photoData =
         "fileCount": 6
     },
     {
-        "title": "Pavé unis",
+        "title": "Pavé uni",
         "fileName": "PaveUnis",
         "fileCount": 6
     },
     {
-        "title": "Pierre collé",
+        "title": "Pierre collée",
         "fileName": "PierreColler",
         "fileCount": 1
     },
     {
-        "title": "Réparation de cheminé",
+        "title": "Réparation de cheminée",
         "fileName": "ReparationChemine",
         "fileCount": 4
     },
@@ -36,7 +36,7 @@ var photoData =
         "fileCount": 5
     },
     {
-        "title": "Réparation de pierre naturelle",
+        "title": "Réparation de pierres naturelles",
         "fileName": "ReparationPierreNaturelle",
         "fileCount": 2
     }
